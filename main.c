@@ -8,11 +8,11 @@
 //6: organizacija izvornog koda
 
 int main(void) {
-	char uvijet = '1';
+	char odabir = '1';
 
 
-	while (uvijet) {
-		uvijet = izbornik();
+	while (odabir) {
+		odabir = izbornik();
 	}
 	printf("\t\t  Hvala na sudjelovanju!\n");
 
