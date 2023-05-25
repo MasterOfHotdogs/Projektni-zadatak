@@ -21,8 +21,9 @@ char izbornik(void) {
 	printf("\n\t\t > Opcija 3: Pretrazi igrace na rang ljestvici");
 	printf("\n\t\t > Opcija 4: Dodaj pitanja");
 	printf("\n\t\t > Opcija 5: Pregled pitanja");
-	printf("\n\t\t > Opcija 6: Pomoc");
-	printf("\n\t\t > Opcija 7: Izlaz iz programa");
+	printf("\n\t\t > Opcija 6: Obrisi sva pitanja");
+	printf("\n\t\t > Opcija 7: Pomoc");
+	printf("\n\t\t > Opcija 8: Izlaz iz programa");
 	printf("\n\t\t_____________________________________________________________\n\n");
 
 
@@ -44,16 +45,18 @@ char izbornik(void) {
 		break;
 	case '4':
 		admnistrator();
-		dodavanjePitanja();
 		break;
 	case '5':
 		pregledPitanja();
 		break;
 	case '6':
-		pomoc();
+		brisanjePitanja();
 		break;
 	case '7':
-		izlaz();
+		pomoc();
+		break;
+	case '8':
+		odabir = izlaz();
 		break;
 	default:
 		printf("\n\t\tKrivi odabir! Unesite neku od ponudjenih opcija\n");
