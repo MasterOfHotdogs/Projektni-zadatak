@@ -3,6 +3,7 @@
 
 
 //3: primjena typedef
+//10: upotreba struktura i funkcija
 
 typedef struct pitanje {
 	int tezina;
@@ -18,6 +19,8 @@ typedef struct highscore {
 	long int highscore;
 }HIGHSCORE;
 
+//4: upotreba camelCase kroz cijeli projekt
+
 char izbornik(void);
 void start(void);
 void* dodavanjePitanja(void);
@@ -25,8 +28,13 @@ void pomoc(void);
 char izlaz(void);
 char pregledPitanja(void);
 char pretrazivanjeRang(void);
-void pregledRangLjestvice(void);
+void highscore(void);
 void admnistrator(void); 
-//void kreiranje(void);
+void kreiranjeDatoteke(void);
+void provjeraStringa(char*);
+void* ucitavanjePitanja(void);
+void brisanjePitanja(void);
+PITANJE sortiranjePolja(PITANJE*, int);
+void selectionSort(HIGHSCORE*, int);
 
 #endif 
