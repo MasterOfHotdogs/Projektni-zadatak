@@ -16,8 +16,9 @@ static int counter = 0;
 void pomoc(void) {
 
 	system("cls");
-	printf("\n ********************************* Dobrodosli u kviz o video igrama **********************************");
-	printf("\n *****************************************************************************************************");
+	printf("\n -----------------------------------------------------------------------------------------------------");
+	printf("\n\t\t\t\t Dobrodosli u kviz o video igrama");
+	printf("\n -----------------------------------------------------------------------------------------------------");
 	printf("\n\n\t>>Pravila igre <<");
 
 	printf("\n\n\tOvaj kviz o video igrama je natjecateljska manifestaciju u kojem natjecatelj\
@@ -27,14 +28,731 @@ void pomoc(void) {
 \n\tnatjecatelja o video igrama, bile one stare ili nove.\n");
 
 	printf("\n\n\t>> Opcija \"ODUSTANI\" <<");
-	printf("\n\n\tNNatjecatelj ukoliko odluci moze u bilo kojem trenutku prekunuti s igromm.\
+	printf("\n\n\tNatjecatelj ukoliko odluci moze u bilo kojem trenutku prekunuti s igromm.\
 \n\tpritiskom 'O' na tipkovnici, natjecatelj zavrsava svoju igru te mu se pripisuju bodovi steceni\
 \n\tdo zadnjeg tocnog pitanja.");
+
+	printf("\n\n -----------------------------------------------------------------------------------------------------");
+	printf("\n");
 
 	printf("\n\n\n\tPritisnite enter za povratak na pocetni zaslon!\n");
 	system("pause");
 	system("cls");
 }
+
+void start(void) {
+
+	system("cls");
+
+	HIGHSCORE igrac;
+	int r1 = 1, count = 0, granica = 0, var, j;
+	char znak;
+
+	printf("\n\n\n\n\t\t\tUnesite svoje ime: ");
+	scanf("%s", igrac.ime);
+	//system("pause");
+	system("cls");
+
+
+	FILE* hp = NULL;
+	hp = fopen("highscore.bin", "ab+");
+	if (hp == NULL) {
+		printf("\nDatoteka se ne moze otvoriti.\n");
+		perror("Otvaranje");
+	}
+
+	poljePitanja = (PITANJE*)ucitavanjePitanja();
+	if (poljePitanja == NULL) {
+		perror("Zauzimanje memorije za sortirana pitanja");
+		exit(EXIT_FAILURE);
+	}
+
+	PITANJE vraceno;
+	char tocno;
+
+	do {
+		switch (r1) {
+		case 1:
+			printf("\n\t********** Pitanje za 100 **********");
+			vraceno = sortiranjePolja(poljePitanja, 1);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+			
+				if (znak == tocno){
+
+					printf("\n\n\t\tTocno!!!");
+					count = 100;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 0;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+		case 2:
+			printf("\n\t********** Pitanje za 200 **********");
+			vraceno = sortiranjePolja(poljePitanja, 2);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+
+				if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!");
+					count = 200;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 100;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+		case 3:
+			printf("\n\t********** Pitanje za 300 **********");
+			vraceno = sortiranjePolja(poljePitanja, 3);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+
+				 if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!");
+					count = 300;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 200;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+		case 4:
+			printf("\n\t********** Pitanje za 500 **********");
+			vraceno = sortiranjePolja(poljePitanja, 4);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+				if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!");
+					count = 500;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 500;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+		case 5:
+			printf("\n\t********** Pitanje za 1000 **********");
+			vraceno = sortiranjePolja(poljePitanja, 5);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+				if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!");
+					count = 1000;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 1000;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+		case 6:
+			printf("\n\t********** Pitanje za 2000 **********");
+			vraceno = sortiranjePolja(poljePitanja, 6);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+				
+				if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!");
+					count = 2000;
+					granica = 1000;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 1000;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					granica = 1000;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+		case 7:
+			printf("\n\t********** Pitanje za 4000 **********");
+			vraceno = sortiranjePolja(poljePitanja, 7);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+				
+				if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!");
+					count = 4000;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 2000;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+		case 8:
+			printf("\n\t********** Pitanje za 8000 **********");
+			vraceno = sortiranjePolja(poljePitanja, 8);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+				
+				if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!");
+					count = 8000;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 4000;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+		case 9:
+			printf("\n\t********** Pitanje za 16 000 **********");
+			vraceno = sortiranjePolja(poljePitanja, 9);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+
+				if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!");
+					count = 16000;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 8000;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+		case 10:
+			printf("\n\t********** Pitanje za 32 000 **********");
+			vraceno = sortiranjePolja(poljePitanja, 10);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+
+				if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!");
+					count = 32000;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 16000;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+		case 11:
+			printf("\n\t********** Pitanje za 64 000 **********");
+			vraceno = sortiranjePolja(poljePitanja, 11);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+
+				if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!");
+					count = 64000;
+					granica = 32000;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 32000;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					granica = 32000;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+		case 12:
+			printf("\n\t********** Pitanje za 125 000 **********");
+			vraceno = sortiranjePolja(poljePitanja, 12);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+
+				if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!");
+					count = 125000;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 64000;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+		case 13:
+			printf("\n\t********** Pitanje za 250 000 **********");
+			vraceno = sortiranjePolja(poljePitanja, 13);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+				if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!");
+					count = 250000;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 125000;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+
+		case 14:
+			printf("\n\t********** Pitanje za 500 000 **********");
+			vraceno = sortiranjePolja(poljePitanja, 14);
+			tocno = ispisivanjePitanja(vraceno);;
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+
+				if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!");
+					count = 500000;
+					r1++;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 250000;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					j = 0;
+					r1++;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+
+		case 15:
+			printf("\n\t********** Pitanje za 1 000 000 **********");
+			vraceno = sortiranjePolja(poljePitanja, 15);
+			tocno = ispisivanjePitanja(vraceno);
+			printf("\n\tDa bi ste odustali odaberite \"O\"");
+			j = 1;
+			do {
+				printf("\n\tUnesite vas odgovor: ");
+				znak = getch();
+
+				if (znak == tocno)
+				{
+					printf("\n\n\t\tTocno!!!\n\t\t");
+					count = 1000000;
+					r1 = 0;
+					j = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else if (znak == 'o') {
+					printf("\n\tOdustali ste\n");
+					count = 500000;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+				else
+				{
+					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
+					count = 0;
+					j = 0;
+					r1 = 0;
+					printf("\n\t");
+					system("pause");
+					system("cls");
+					break;
+				}
+			} while (j);
+			break;
+		}
+	} while (r1);
+
+	igrac.highscore = (count >= granica ? count : granica);
+	system("cls");
+	printf("\n\tVase ime:%s i vas highscore: %d\n\t", igrac.ime, igrac.highscore);
+
+	fprintf(hp, "%8d %s", igrac.highscore, igrac.ime);
+
+
+	fclose(hp);
+	//free(poljePitanja);
+	//printf("\n\t");
+	int uvijet;
+	while ((uvijet = getchar()) != '\n' && uvijet != EOF) {}
+	system("pause");
+	system("cls");
+}
+
+
+
 
 void kreiranjeDatoteke(void) {
 
@@ -58,12 +776,6 @@ void kreiranjeDatoteke(void) {
 }
 
 
-void start(void) {
-	printf("\n\n\n\tPritisnite enter za povratak na pocetni zaslon!\n");
-	system("pause");
-	system("cls");
-
-}
 
 
 
@@ -113,7 +825,7 @@ void* dodavanjePitanja(void) {
 
 	//17: rewind();
 
-	rewind(pF);   
+	rewind(pF);
 	brojPitanja++;
 	fwrite(&brojPitanja, sizeof(int), 1, pF);
 	fclose(pF);
@@ -136,12 +848,12 @@ void admnistrator(void) {
 	printf("Unesite zaporku: ");
 	scanf("%s", &password);
 
-	if (strcmp(username, "Ronaldo") == 0) {
-		if (strcmp(password, "SIU") == 0) {
+	if (strcmp(username, "Mato") == 0) {
+		if (strcmp(password, "gas") == 0) {
 			printf("Uspjesno ste se ulogirali");
 			system("cls");
-			
-			int g = 0; 
+
+			int g = 0;
 			printf("Koliko pitanja zelite dodati?\n");
 			scanf("%d", &g);
 
@@ -185,14 +897,14 @@ char izlaz(void) {
 void* ucitavanjePitanja(void) {
 	FILE* pF = fopen("pitanja.bin", "rb");
 	if (pF == NULL) {
-		perror("Ucitavanje pitanja iz datoteke pitanja.bin nije uspjelo");
+		perror("Ucitavanje pitanja iz datoteke pitanja.bin");
 		return NULL;
 	}
 
 	fread(&brojPitanja, sizeof(int), 1, pF);
 
 	PITANJE* poljePitanja = { NULL };
-	poljePitanja = (PITANJE*)calloc(brojPitanja, sizeof(PITANJE));    //14: calloc();
+	poljePitanja = (PITANJE*)calloc(brojPitanja, sizeof(PITANJE));
 	if (poljePitanja == NULL) {
 		perror("Zauzimanje memorije za pitanja");
 		return NULL;
@@ -203,12 +915,44 @@ void* ucitavanjePitanja(void) {
 	return poljePitanja;
 }
 
+
+char ispisivanjePitanja(PITANJE odabrano) {
+
+
+	int x;
+	printf("\n\n\t%s", odabrano.pitanje);
+	x = (float)rand() / RAND_MAX * 1000;
+
+	char tocni;
+
+	if (0 <= x && x < 250) {
+		printf("\n\tA:%s\tB:%s\tC:%s\tD:%s", odabrano.odg2, odabrano.odg3, odabrano.odg1, odabrano.odg4);
+		tocni = 'c';
+	}
+	if (250 <= x && x < 500) {
+		printf("\n\tA:%s\tB:%s\tC:%s\tD:%s", odabrano.odg4, odabrano.odg1, odabrano.odg2, odabrano.odg3);
+		tocni = 'b';
+	}
+	if (500 <= x && x < 750) {
+		printf("\n\tA:%s\tB:%s\tC:%s\tD:%s", odabrano.odg3, odabrano.odg2, odabrano.odg4, odabrano.odg1);
+		tocni = 'd';
+	}
+	if (750 <= x && x <= 1000) {
+		printf("\n\tA:%s\tB:%s\tC:%s\tD:%s", odabrano.odg1, odabrano.odg4, odabrano.odg3, odabrano.odg2);
+		tocni = 'a';
+	}
+	return tocni;
+}
+
+
+
+
 char pregledPitanja(void) {
 	poljePitanja = (PITANJE*)ucitavanjePitanja();
 
 
 	int tezina, i;
-	printf("\n\tUneiste tezinu pitanja koja zelite pretrazit: ");
+	printf("\n\tUnesiste tezinu pitanja koja zelite pretrazit: ");
 	do {
 		scanf("%d", &tezina);
 		if (tezina < 0 || tezina > 15) {
@@ -246,11 +990,75 @@ char pregledPitanja(void) {
 	while ((uvijet = getchar()) != '\n' && uvijet != EOF) {}
 }
 
-char pretrazivanjeRang(void) {
-	printf("\n\n\n\tPritisnite enter za povratak na pocetni zaslon!\n");
-	system("pause");
-	system("cls");
-}
+void pretrazivanjeRang(void) {
+
+		FILE* hp = NULL;
+		hp = fopen("highscore.bin", "rb");
+		if (hp == NULL) {
+			printf("\nDatoteka se ne moze otvoriti.\n");
+			perror("Otvaranje");
+		}
+
+		HIGHSCORE* hs;
+		int highscore;
+		char ime[20];
+		int i = 0, brojac = 0;
+
+
+		while ((fscanf(hp, "%d %s", &highscore, ime)) != EOF) {
+			brojac++;
+		}
+
+		hs = (HIGHSCORE*)calloc(brojac, sizeof(HIGHSCORE));
+
+		rewind(hp);
+
+		while ((fscanf(hp, "%d %s", &(hs + i)->highscore, (hs + i)->ime)) != EOF) {
+			i++;
+		}
+
+
+		char s[20];
+		char* string = &s;
+		int f = 0;
+
+
+		printf("\n\tUnesite ime trazenog igraca: ");
+		fgets(string, 19, stdin);
+		provjeraStringa(string);
+
+		for (i = 0; i < brojac; i++) {
+			//printf("\n\tOvo je ime iz stirnga: %s, a ovo iz polja: %s", string, (hs + i)->ime);
+
+			if (strcmp((hs + i)->ime, string) == 0) {
+				printf("\n\tIgrac je pronaden!\n");
+				printf("\n\tIme:%s\t\tHighscore:%d", (hs + i)->ime, (hs + i)->highscore);
+				f = 1;
+				//printf("\n\t");
+				//system("pause");
+				//system("cls");
+			}
+
+			else if (i == (brojac - 1) && f < 1) {
+				printf("\n\tTakav igrac ne postoji");
+				//printf("\n\t");
+				//system("pause");
+				//system("cls");
+
+			}
+		}
+		/*printf("\n\tTakav igrac ne postoji");
+		printf("\n\t");
+		system("pause");
+		system("cls");*/
+
+		fclose(hp);
+		printf("\n\t");
+		system("pause");
+		system("cls");
+
+	}
+
 
 void selectionSort(HIGHSCORE* hs, int n) {
 
@@ -289,10 +1097,43 @@ void selectionSort(HIGHSCORE* hs, int n) {
 
 void highscore(void) {
 
-	printf("\n\n\n\tPritisnite enter za povratak na pocetni zaslon!\n");
+
+	FILE* hp = NULL;
+	hp = fopen("highscore.bin", "rb");
+	if (hp == NULL) {
+		printf("\nDatoteka se ne moze otvoriti.\n");
+		perror("Otvaranje");
+	}
+
+
+	HIGHSCORE* hs;
+	int highscore;
+	char ime[20];
+	int i = 0, brojac = 0;
+
+
+	while ((fscanf(hp, "%7d %s", &highscore, ime)) != EOF) {
+		brojac++;
+	}
+
+	hs = (HIGHSCORE*)calloc(brojac, sizeof(HIGHSCORE));
+
+	rewind(hp);
+
+	while ((fscanf(hp, "%7d %s", &(hs + i)->highscore, (hs + i)->ime)) != EOF) {
+		i++;
+	}
+
+	selectionSort(hs, brojac);
+
+	fclose(hp);
+
+	//printf("\nPritisnite enter za povratak na pocetni zaslon!\n");
+	printf("\n\t");
 	system("pause");
 	system("cls");
 }
+
 
 void provjeraStringa(char* polje) {
 	int n = strlen(polje);
@@ -350,4 +1191,5 @@ PITANJE sortiranjePolja(PITANJE* poljePitanja, int tezina) {
 
 	return odabrano;
 }
+
 
