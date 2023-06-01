@@ -13,9 +13,9 @@ char izbornik(void) {
 	printf("\n\t\t\t                 K V I Z\n ");
 	printf("\n\t\t\t        O  V I D E O  I G R A M A");
 	printf("\n\t\t");
-	printf("\n\t\t*************************************************************");
+	printf("\n\t\t-------------------------------------------------------------");
 	printf("\n\t\t  JESI LI ZAISTA GAMER? TESTIRAJ SVOJE ZNANJE U OVOM KVIZU!");
-	printf("\n\t\t*************************************************************");
+	printf("\n\t\t-------------------------------------------------------------");
 	printf("\n\t\t > Opcija 1: Zapocni igru");
 	printf("\n\t\t > Opcija 2: Pogledaj rang ljestvicu");
 	printf("\n\t\t > Opcija 3: Pretrazi igrace na rang ljestvici");
