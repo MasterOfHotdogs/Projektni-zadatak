@@ -27,14 +27,15 @@ void* dodavanjePitanja(void);
 void pomoc(void);
 char izlaz(void);
 char pregledPitanja(void);
-char pretrazivanjeRang(void);
+void pretrazivanjeRang(void);
 void highscore(void);
-void admnistrator(void); 
+void admnistrator(void);
 void kreiranjeDatoteke(void);
 void provjeraStringa(char*);
 void* ucitavanjePitanja(void);
 void brisanjePitanja(void);
 PITANJE sortiranjePolja(PITANJE*, int);
 void selectionSort(HIGHSCORE*, int);
+char ispisivanjePitanja(PITANJE);
 
 #endif 
