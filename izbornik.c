@@ -38,7 +38,7 @@ char izbornik(void) {
 		start();
 		break;
 	case '2':
-		pregledRangLjestvice();
+		highscore();
 		break;
 	case '3':
 		pretrazivanjeRang();
