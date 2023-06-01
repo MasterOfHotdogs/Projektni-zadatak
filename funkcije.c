@@ -73,7 +73,9 @@ void start(void) {
 	do {
 		switch (r1) {
 		case 1:
-			printf("\n\t********** Pitanje za 100 **********");
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 1. pitanje");
+			printf("\n-------------------------------------------------------------");
 			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
@@ -85,7 +87,7 @@ void start(void) {
 				if (znak == tocno){
 
 					printf("\n\n\t\tTocno!!!");
-					count = 100;
+					count++;
 					r1++;
 					j = 0;
 					printf("\n\t");
@@ -95,7 +97,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 0;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -105,7 +106,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -117,8 +117,10 @@ void start(void) {
 			break;
 
 		case 2:
-			printf("\n\t********** Pitanje za 200 **********");
-			vraceno = sortiranjePolja(poljePitanja, 2);
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 2. pitanje");
+			printf("\n-------------------------------------------------------------");
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -129,7 +131,7 @@ void start(void) {
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
-					count = 200;
+					count++;
 					r1++;
 					j = 0;
 					printf("\n\t");
@@ -139,7 +141,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 100;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -149,7 +150,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -161,8 +161,10 @@ void start(void) {
 			break;
 
 		case 3:
-			printf("\n\t********** Pitanje za 300 **********");
-			vraceno = sortiranjePolja(poljePitanja, 3);
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 3. pitanje");
+			printf("\n-------------------------------------------------------------");
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -173,7 +175,7 @@ void start(void) {
 				 if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
-					count = 300;
+					count++;
 					r1++;
 					j = 0;
 					printf("\n\t");
@@ -183,7 +185,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 200;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -193,7 +194,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -205,8 +205,10 @@ void start(void) {
 			break;
 
 		case 4:
-			printf("\n\t********** Pitanje za 500 **********");
-			vraceno = sortiranjePolja(poljePitanja, 4);
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 4. pitanje");
+			printf("\n-------------------------------------------------------------");
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -216,7 +218,7 @@ void start(void) {
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
-					count = 500;
+					count++;
 					r1++;
 					j = 0;
 					printf("\n\t");
@@ -226,7 +228,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 500;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -236,7 +237,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -248,8 +248,10 @@ void start(void) {
 			break;
 
 		case 5:
-			printf("\n\t********** Pitanje za 1000 **********");
-			vraceno = sortiranjePolja(poljePitanja, 5);
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 5. pitanje");
+			printf("\n-------------------------------------------------------------");
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			do {
@@ -258,7 +260,7 @@ void start(void) {
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
-					count = 1000;
+					count++;
 					r1++;
 					j = 0;
 					printf("\n\t");
@@ -268,7 +270,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 1000;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -278,7 +279,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -290,8 +290,10 @@ void start(void) {
 			break;
 
 		case 6:
-			printf("\n\t********** Pitanje za 2000 **********");
-			vraceno = sortiranjePolja(poljePitanja, 6);
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 6. pitanje");
+			printf("\n-------------------------------------------------------------");
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -302,7 +304,7 @@ void start(void) {
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
-					count = 2000;
+					count++;
 					granica = 1000;
 					r1++;
 					j = 0;
@@ -313,7 +315,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 1000;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -323,7 +324,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					granica = 1000;
 					j = 0;
 					r1++;
@@ -336,8 +336,10 @@ void start(void) {
 			break;
 
 		case 7:
-			printf("\n\t********** Pitanje za 4000 **********");
-			vraceno = sortiranjePolja(poljePitanja, 7);
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 8. pitanje");
+			printf("\n-------------------------------------------------------------");
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -348,7 +350,7 @@ void start(void) {
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
-					count = 4000;
+					count++;
 					r1++;
 					j = 0;
 					printf("\n\t");
@@ -358,7 +360,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 2000;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -368,7 +369,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -380,8 +380,10 @@ void start(void) {
 			break;
 
 		case 8:
-			printf("\n\t********** Pitanje za 8000 **********");
-			vraceno = sortiranjePolja(poljePitanja, 8);
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 9. pitanje");
+			printf("\n-------------------------------------------------------------");
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -392,8 +394,8 @@ void start(void) {
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
-					count = 8000;
 					r1++;
+					count++;
 					j = 0;
 					printf("\n\t");
 					system("pause");
@@ -402,7 +404,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 4000;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -412,7 +413,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -425,7 +425,7 @@ void start(void) {
 
 		case 9:
 			printf("\n\t********** Pitanje za 16 000 **********");
-			vraceno = sortiranjePolja(poljePitanja, 9);
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -436,7 +436,7 @@ void start(void) {
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
-					count = 16000;
+					count++;
 					r1++;
 					j = 0;
 					printf("\n\t");
@@ -446,7 +446,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 8000;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -456,7 +455,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -468,8 +466,10 @@ void start(void) {
 			break;
 
 		case 10:
-			printf("\n\t********** Pitanje za 32 000 **********");
-			vraceno = sortiranjePolja(poljePitanja, 10);
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 10. pitanje");
+			printf("\n-------------------------------------------------------------");
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -480,7 +480,7 @@ void start(void) {
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
-					count = 32000;
+					count++;
 					r1++;
 					j = 0;
 					printf("\n\t");
@@ -490,7 +490,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 16000;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -500,7 +499,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -512,8 +510,10 @@ void start(void) {
 			break;
 
 		case 11:
-			printf("\n\t********** Pitanje za 64 000 **********");
-			vraceno = sortiranjePolja(poljePitanja, 11);
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 11. pitanje");
+			printf("\n-------------------------------------------------------------");
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -524,7 +524,7 @@ void start(void) {
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
-					count = 64000;
+					count++;
 					granica = 32000;
 					r1++;
 					j = 0;
@@ -535,7 +535,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 32000;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -545,7 +544,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					granica = 32000;
 					j = 0;
 					r1++;
@@ -558,8 +556,10 @@ void start(void) {
 			break;
 
 		case 12:
-			printf("\n\t********** Pitanje za 125 000 **********");
-			vraceno = sortiranjePolja(poljePitanja, 12);
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 12. pitanje");
+			printf("\n-------------------------------------------------------------");
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -570,7 +570,7 @@ void start(void) {
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
-					count = 125000;
+					count++;
 					r1++;
 					j = 0;
 					printf("\n\t");
@@ -580,7 +580,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 64000;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -590,7 +589,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -602,8 +600,10 @@ void start(void) {
 			break;
 
 		case 13:
-			printf("\n\t********** Pitanje za 250 000 **********");
-			vraceno = sortiranjePolja(poljePitanja, 13);
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 13. pitanje");
+			printf("\n-------------------------------------------------------------");
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -613,7 +613,7 @@ void start(void) {
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
-					count = 250000;
+					count++;
 					r1++;
 					j = 0;
 					printf("\n\t");
@@ -623,7 +623,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 125000;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -633,7 +632,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -646,8 +644,10 @@ void start(void) {
 
 
 		case 14:
-			printf("\n\t********** Pitanje za 500 000 **********");
-			vraceno = sortiranjePolja(poljePitanja, 14);
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 14. pitanje");
+			printf("\n-------------------------------------------------------------");
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);;
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -658,7 +658,7 @@ void start(void) {
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
-					count = 500000;
+					count++;
 					r1++;
 					j = 0;
 					printf("\n\t");
@@ -668,7 +668,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 250000;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -678,7 +677,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -690,8 +688,10 @@ void start(void) {
 			break;
 
 		case 15:
-			printf("\n\t********** Pitanje za 1 000 000 **********");
-			vraceno = sortiranjePolja(poljePitanja, 15);
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 15. pitanje");
+			printf("\n-------------------------------------------------------------");
+			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -702,7 +702,7 @@ void start(void) {
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!\n\t\t");
-					count = 1000000;
+					count++;
 					r1 = 0;
 					j = 0;
 					printf("\n\t");
@@ -712,7 +712,6 @@ void start(void) {
 				}
 				else if (znak == 'o') {
 					printf("\n\tOdustali ste\n");
-					count = 500000;
 					r1 = 0;
 					printf("\n\t");
 					system("pause");
@@ -722,7 +721,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					count = 0;
 					j = 0;
 					r1 = 0;
 					printf("\n\t");
@@ -735,9 +733,9 @@ void start(void) {
 		}
 	} while (r1);
 
-	igrac.highscore = (count >= granica ? count : granica);
+	igrac.highscore = (count);
 	system("cls");
-	printf("\n\tVase ime:%s i vas highscore: %d\n\t", igrac.ime, igrac.highscore);
+	printf("\n\tVase ime:%s i vas highscore: %d/15\n\t", igrac.ime, igrac.highscore);
 
 	fprintf(hp, "%8d %s", igrac.highscore, igrac.ime);
 
@@ -1032,7 +1030,7 @@ void pretrazivanjeRang(void) {
 
 			if (strcmp((hs + i)->ime, string) == 0) {
 				printf("\n\tIgrac je pronaden!\n");
-				printf("\n\tIme:%s\t\tHighscore:%d", (hs + i)->ime, (hs + i)->highscore);
+				printf("\n\tIme:%s\t\tHighscore:%d/15", (hs + i)->ime, (hs + i)->highscore);
 				f = 1;
 				//printf("\n\t");
 				//system("pause");
@@ -1069,7 +1067,7 @@ void selectionSort(HIGHSCORE* hs, int n) {
 	for (i = 0; i < n - 1; i++) {
 		min = i;
 		for (j = i + 1; j < n; j++) {
-			if ((hs + j)->highscore > (hs + min)->highscore) {
+			if ((hs + min)->highscore > (hs + j)->highscore) {
 				min = j;
 			}
 		}
@@ -1081,15 +1079,18 @@ void selectionSort(HIGHSCORE* hs, int n) {
 
 	j = 1;
 	//printf("\nOvo je n:%d", n);
+	printf("\n-------------------------------------------------------------");
 	if (n >= 10) {
 		for (i = 0; i < 10; i++) {
-			printf("\n\t%d. Ime: %s\t\tHighscore: %d", j, (hs + i)->ime, (hs + i)->highscore);
+			printf("\n\t%d. Ime: %s\t\tHighscore: %d/15", j, (hs + i)->ime, (hs + i)->highscore);
+			printf("\n-------------------------------------------------------------");
 			j++;
 		}
 	}
 	else if (n < 10) {
 		for (i = n - 1; i >= 0; i--) {
-			printf("\n\t%d. Ime: %s\t\tHighscore: %d", j, (hs + i)->ime, (hs + i)->highscore);
+			printf("\n\t%d. Ime: %s\t\tHighscore: %d/15", j, (hs + i)->ime, (hs + i)->highscore);
+			printf("\n-------------------------------------------------------------");
 			j++;
 		}
 	}
@@ -1144,7 +1145,7 @@ void provjeraStringa(char* polje) {
 
 void brisanjePitanja(void) {
 
-	remove("pitanja.bin") == 0 ? printf("Izbrisali ste datoteku pitanja.bin.\n") : printf("Datoteka neuspjesno izbrisani ili ona ne postoji.\n");  //18: remove()
+	remove("pitanja.bin") == 0 ? printf("Izbrisali ste datoteku pitanja.bin.\n") : printf("Datoteka neuspjesno izbrisana ili ona ne postoji.\n");  //18: remove()
 	system("pause");
 	system("cls");
 }
