@@ -337,7 +337,7 @@ void start(void) {
 
 		case 7:
 			printf("\n-------------------------------------------------------------");
-			printf("\n\t\t\t 8. pitanje");
+			printf("\n\t\t\t 7. pitanje");
 			printf("\n-------------------------------------------------------------");
 			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
@@ -381,7 +381,7 @@ void start(void) {
 
 		case 8:
 			printf("\n-------------------------------------------------------------");
-			printf("\n\t\t\t 9. pitanje");
+			printf("\n\t\t\t 8. pitanje");
 			printf("\n-------------------------------------------------------------");
 			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
@@ -424,7 +424,9 @@ void start(void) {
 			break;
 
 		case 9:
-			printf("\n\t********** Pitanje za 16 000 **********");
+			printf("\n-------------------------------------------------------------");
+			printf("\n\t\t\t 9. pitanje");
+			printf("\n-------------------------------------------------------------");
 			vraceno = sortiranjePolja(poljePitanja, 1);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
@@ -1192,5 +1194,4 @@ PITANJE sortiranjePolja(PITANJE* poljePitanja, int tezina) {
 
 	return odabrano;
 }
-
 
