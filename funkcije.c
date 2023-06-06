@@ -25,11 +25,11 @@ void pomoc(void) {
 \n\todgovara na razna pitanja o video igrama. Kviz se sastoji od 15 pitanja za koja \
 \n\tima ponudjeno 4 odgovora. Natjecatelj odgovara na pitanja do kraja kviza, dok na\
 \n\tsvako tocno odgovoreno pitanje natjecatelj dobija bod. Cilj ovog kviza je testirati znanje\
-\n\tnatjecatelja o video igrama, bile one stare ili nove.\n");
+\n\tnatjecatelja o video igrama, mehanikama video igara, 'loreu', poznatim kompanijama i slicno.\n");
 
 	printf("\n\n\t>> Opcija \"ODUSTANI\" <<");
 	printf("\n\n\tNatjecatelj ukoliko odluci moze u bilo kojem trenutku prekunuti s igromm.\
-\n\tpritiskom 'O' na tipkovnici, natjecatelj zavrsava svoju igru te mu se pripisuju bodovi steceni\
+\n\tpritiskom slova 'O' na tipkovnici, natjecatelj zavrsava svoju igru te mu se pripisuju bodovi steceni\
 \n\tdo zadnjeg tocnog pitanja.");
 
 	printf("\n\n -----------------------------------------------------------------------------------------------------");
@@ -83,8 +83,8 @@ void start(void) {
 			do {
 				printf("\n\tUnesite vas odgovor: ");
 				znak = getch();
-			
-				if (znak == tocno){
+
+				if (znak == tocno) {
 
 					printf("\n\n\t\tTocno!!!");
 					count++;
@@ -172,7 +172,7 @@ void start(void) {
 				printf("\n\tUnesite vas odgovor: ");
 				znak = getch();
 
-				 if (znak == tocno)
+				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
 					count++;
@@ -300,12 +300,11 @@ void start(void) {
 			do {
 				printf("\n\tUnesite vas odgovor: ");
 				znak = getch();
-				
+
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
 					count++;
-					granica = 1000;
 					r1++;
 					j = 0;
 					printf("\n\t");
@@ -346,7 +345,7 @@ void start(void) {
 			do {
 				printf("\n\tUnesite vas odgovor: ");
 				znak = getch();
-				
+
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
@@ -390,7 +389,7 @@ void start(void) {
 			do {
 				printf("\n\tUnesite vas odgovor: ");
 				znak = getch();
-				
+
 				if (znak == tocno)
 				{
 					printf("\n\n\t\tTocno!!!");
@@ -527,7 +526,6 @@ void start(void) {
 				{
 					printf("\n\n\t\tTocno!!!");
 					count++;
-					granica = 32000;
 					r1++;
 					j = 0;
 					printf("\n\t");
@@ -546,7 +544,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					granica = 32000;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -743,7 +740,7 @@ void start(void) {
 
 
 	fclose(hp);
-	//free(poljePitanja);
+	free(poljePitanja);
 	//printf("\n\t");
 	int uvijet;
 	while ((uvijet = getchar()) != '\n' && uvijet != EOF) {}
@@ -903,8 +900,9 @@ void* ucitavanjePitanja(void) {
 
 	fread(&brojPitanja, sizeof(int), 1, pF);
 
+	//13: dinamicko zauzimanje memorije
 	PITANJE* poljePitanja = { NULL };
-	poljePitanja = (PITANJE*)calloc(brojPitanja, sizeof(PITANJE));
+	poljePitanja = (PITANJE*)calloc(brojPitanja, sizeof(PITANJE));   //14: malloc funkcija
 	if (poljePitanja == NULL) {
 		perror("Zauzimanje memorije za pitanja");
 		return NULL;
@@ -952,7 +950,7 @@ char pregledPitanja(void) {
 
 
 	int tezina, i;
-	printf("\n\tUnesiste tezinu pitanja koja zelite pretrazit: ");
+	printf("\n\tUnesite tezinu pitanja koja zelite pretrazit (1-15): ");
 	do {
 		scanf("%d", &tezina);
 		if (tezina < 0 || tezina > 15) {
@@ -992,72 +990,72 @@ char pregledPitanja(void) {
 
 void pretrazivanjeRang(void) {
 
-		FILE* hp = NULL;
-		hp = fopen("highscore.bin", "rb");
-		if (hp == NULL) {
-			printf("\nDatoteka se ne moze otvoriti.\n");
-			perror("Otvaranje");
-		}
-
-		HIGHSCORE* hs;
-		int highscore;
-		char ime[20];
-		int i = 0, brojac = 0;
-
-
-		while ((fscanf(hp, "%d %s", &highscore, ime)) != EOF) {
-			brojac++;
-		}
-
-		hs = (HIGHSCORE*)calloc(brojac, sizeof(HIGHSCORE));
-
-		rewind(hp);
-
-		while ((fscanf(hp, "%d %s", &(hs + i)->highscore, (hs + i)->ime)) != EOF) {
-			i++;
-		}
-
-
-		char s[20];
-		char* string = &s;
-		int f = 0;
-
-
-		printf("\n\tUnesite ime trazenog igraca: ");
-		fgets(string, 19, stdin);
-		provjeraStringa(string);
-
-		for (i = 0; i < brojac; i++) {
-			//printf("\n\tOvo je ime iz stirnga: %s, a ovo iz polja: %s", string, (hs + i)->ime);
-
-			if (strcmp((hs + i)->ime, string) == 0) {
-				printf("\n\tIgrac je pronaden!\n");
-				printf("\n\tIme:%s\t\tHighscore:%d/15", (hs + i)->ime, (hs + i)->highscore);
-				f = 1;
-				//printf("\n\t");
-				//system("pause");
-				//system("cls");
-			}
-
-			else if (i == (brojac - 1) && f < 1) {
-				printf("\n\tTakav igrac ne postoji");
-				//printf("\n\t");
-				//system("pause");
-				//system("cls");
-
-			}
-		}
-		/*printf("\n\tTakav igrac ne postoji");
-		printf("\n\t");
-		system("pause");
-		system("cls");*/
-
-		fclose(hp);
-		printf("\n\t");
-		system("pause");
-		system("cls");
-
+	FILE* hp = NULL;
+	hp = fopen("highscore.bin", "rb");
+	if (hp == NULL) {
+		printf("\nDatoteka se ne moze otvoriti.\n");
+		perror("Otvaranje");
 	}
+
+	HIGHSCORE* hs;
+	int highscore;
+	char ime[20];
+	int i = 0, brojac = 0;
+
+
+	while ((fscanf(hp, "%d %s", &highscore, ime)) != EOF) {
+		brojac++;
+	}
+
+	hs = (HIGHSCORE*)calloc(brojac, sizeof(HIGHSCORE));
+
+	rewind(hp);
+
+	while ((fscanf(hp, "%d %s", &(hs + i)->highscore, (hs + i)->ime)) != EOF) {
+		i++;
+	}
+
+
+	char s[20];
+	char* string = &s;
+	int f = 0;
+
+
+	printf("\n\tUnesite ime trazenog igraca: ");
+	fgets(string, 19, stdin);
+	provjeraStringa(string);
+
+	for (i = 0; i < brojac; i++) {
+		//printf("\n\tOvo je ime iz stirnga: %s, a ovo iz polja: %s", string, (hs + i)->ime);
+
+		if (strcmp((hs + i)->ime, string) == 0) {
+			printf("\n\tIgrac je pronaden!\n");
+			printf("\n\tIme:%s\t\tHighscore:%d/15", (hs + i)->ime, (hs + i)->highscore);
+			f = 1;
+			//printf("\n\t");
+			//system("pause");
+			//system("cls");
+		}
+
+		else if (i == (brojac - 1) && f < 1) {
+			printf("\n\tTakav igrac ne postoji");
+			//printf("\n\t");
+			//system("pause");
+			//system("cls");
+
+		}
+	}
+	/*printf("\n\tTakav igrac ne postoji");
+	printf("\n\t");
+	system("pause");
+	system("cls");*/
+
+	fclose(hp);
+	printf("\n\t");
+	system("pause");
+	system("cls");
+
+}
 
 
 void selectionSort(HIGHSCORE* hs, int n) {
@@ -1194,4 +1192,5 @@ PITANJE sortiranjePolja(PITANJE* poljePitanja, int tezina) {
 
 	return odabrano;
 }
+
 
