@@ -59,7 +59,7 @@ char izbornik(void) {
 		odabir = izlaz();
 		break;
 	default:
-		printf("\n\t\tKrivi odabir! Unesite neku od ponudjenih opcija\n");
+		printf("\n\t\tKrivi odabir! Unesite neku od ponudjenih opcija\n");        //11: zastita parametara
 		while ((odabir = getchar()) != '\n' && odabir != EOF) {}
 		printf("\n\t\t");
 		system("pause");
