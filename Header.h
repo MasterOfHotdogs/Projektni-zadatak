@@ -39,3 +39,4 @@ void selectionSort(HIGHSCORE*, int);
 char ispisivanjePitanja(PITANJE);
 
 #endif 
+
