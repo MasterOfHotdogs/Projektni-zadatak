@@ -120,7 +120,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 2. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 2);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -164,7 +164,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 3. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 3);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -208,7 +208,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 4. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 4);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -251,7 +251,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 5. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 5);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			do {
@@ -293,7 +293,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 6. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 6);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -338,7 +338,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 7. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 7);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -382,7 +382,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 8. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 8);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -426,7 +426,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 9. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 9);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -470,7 +470,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 10. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 10);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -514,7 +514,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 11. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 11);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -558,7 +558,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 12. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 12);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -602,7 +602,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 13. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 13);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -646,7 +646,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 14. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 14);
 			tocno = ispisivanjePitanja(vraceno);;
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -690,7 +690,7 @@ void start(void) {
 			printf("\n-------------------------------------------------------------");
 			printf("\n\t\t\t 15. pitanje");
 			printf("\n-------------------------------------------------------------");
-			vraceno = sortiranjePolja(poljePitanja, 1);
+			vraceno = sortiranjePolja(poljePitanja, 15);
 			tocno = ispisivanjePitanja(vraceno);
 			printf("\n\tDa bi ste odustali odaberite \"O\"");
 			j = 1;
@@ -734,7 +734,8 @@ void start(void) {
 
 	igrac.highscore = (count);
 	system("cls");
-	printf("\n\tVase ime:%s i vas highscore: %d/15\n\t", igrac.ime, igrac.highscore);
+	printf("\n\tKviz je zavrsio.\n\t");
+	printf("\n\tVase ime: %s i vas highscore: %d/15\n\t", igrac.ime, igrac.highscore);
 
 	fprintf(hp, "%8d %s", igrac.highscore, igrac.ime);
 
@@ -1145,7 +1146,7 @@ void provjeraStringa(char* polje) {
 
 void brisanjePitanja(void) {
 
-	remove("pitanja.bin") == 0 ? printf("Izbrisali ste datoteku pitanja.bin.\n") : printf("Datoteka neuspjesno izbrisana ili ona ne postoji.\n");  //18: remove()
+	remove("pitanja.bin") == 0 ? printf("Izbrisali ste datoteku pitanja.bin.\n") : printf("Datoteka neuspjesno izbrisana ili ona ne postoji.\n
 	system("pause");
 	system("cls");
 }
