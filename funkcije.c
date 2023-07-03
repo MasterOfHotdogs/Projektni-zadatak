@@ -45,7 +45,7 @@ void start(void) {
 	system("cls");
 
 	HIGHSCORE igrac;
-	int r1 = 1, count = 0, granica = 0, var, j;
+	int r1 = 1, count = 0, j;
 	char znak;
 
 	printf("\n\n\n\n\t\t\tUnesite svoje ime: ");
@@ -323,7 +323,6 @@ void start(void) {
 				else
 				{
 					printf("\n\n\tNetocno!!! Tocan odgovor je pod %c:%s", toupper(tocno), vraceno.odg1);
-					granica = 1000;
 					j = 0;
 					r1++;
 					printf("\n\t");
@@ -783,7 +782,7 @@ void* dodavanjePitanja(void) {
 	kreiranjeDatoteke();
 	FILE* pF = fopen("pitanja.bin", "rb+");
 	if (pF == NULL) {
-		perror("Dodavanje studenta u datoteke pitanja.bin");
+		perror("Error kreiranja datoteke pitanja.bin");
 		exit(EXIT_FAILURE);
 	}
 	fread(&brojPitanja, sizeof(int), 1, pF);
